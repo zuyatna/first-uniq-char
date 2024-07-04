@@ -2,6 +2,7 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
     firstUniqChar("loveleetcode")
+    fastFirstUniqChar("leetcode")
 }
 
 fun firstUniqChar(s: String): Int {
@@ -10,14 +11,8 @@ fun firstUniqChar(s: String): Int {
     for (i in breakChar.indices) {
         val copyBreakChar = breakChar.toMutableList()
         copyBreakChar.removeAt(i)
-        println("index: $i, value: ${breakChar[i]}")
-        println(copyBreakChar.toList())
 
-        if (copyBreakChar.contains(breakChar[i])) {
-            println("contain")
-            println()
-        } else {
-            println("not contain")
+        if (!copyBreakChar.contains(breakChar[i])) {
             return i
         }
     }
